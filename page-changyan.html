@@ -6,45 +6,50 @@
     <style type="text/css">
         html, body {
             margin: 0;
+            text-align: center;
+        }
+        .wrapper {
+            text-align: left;
+            width: 970px;
+            padding: 0 10px;
+            margin: 0 auto;
             background: #F5F5F5;
-            padding: 0 200px;
         }
     </style>
 </head>
 <body>
 
-<div style="height: 800px;"></div>
+<div class="wrapper">
+    <div style="height: 900px;"></div>
+    <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+    <div id="SOHUCS"></div>
+    <script>
+        (function(){
+            window._config = {
+                /*skin : 'redBlack',*/
+                /*skin : 'black',*/
+                sUrl: 'http://test.yemianzai.com/own/jueshiduxiao.github.com/page-changyan.html',
+                hideHotNews : true,
+                pageSize: 5
+            };
 
-<!--高速版，加载速度快，使用前需测试页面的兼容性-->
-<div id="SOHUCS"></div>
-<script>
+            /*window.changyan = {};*/
 
-    (function(){
-        window._config = {
-            /*skin : 'redBlack',*/
-            /*skin : 'black',*/
-            /*sUrl: 'http://test.yemianzai.com/own/jueshiduxiao.github.com/page-changyan.html',*/
-            hideHotNews : true,
-            pageSize: 5
-        };
+            var appid = 'cyrkKYELy',
+                conf = 'prod_14a44184e153225aac09c814509d1426';
 
-        /*window.changyan = {};*/
+            var doc = document,
+                s = doc.createElement('script'),
+                h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+                s.type = 'text/javascript';
+                s.charset = 'utf-8';
+                s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
 
-        var appid = 'cyrkKYELy',
-            conf = 'prod_14a44184e153225aac09c814509d1426';
-
-        var doc = document,
-            s = doc.createElement('script'),
-            h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
-            s.type = 'text/javascript';
-            s.charset = 'utf-8';
-            s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
-
-        h.insertBefore(s,h.firstChild);
-        window.SCS_NO_IFRAME = true;
-    })();
-
-</script>
+            h.insertBefore(s,h.firstChild);
+            window.SCS_NO_IFRAME = true;
+        })();
+    </script>
+</div>
 
 </body>
 </html>
