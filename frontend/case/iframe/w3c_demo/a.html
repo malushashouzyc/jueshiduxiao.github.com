@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>w3c-demo</title>
+</head>
+<body>
+    <button id="submit">submit</button>
+    <iframe id="frame"></iframe>
+    <script>
+        var button = document.getElementById("submit");
+        var frame = document.getElementById("frame");
+            button.onclick = function(){
+                frame.contentWindow.document.body.innerHTML = "<h1>如果脚本执行了则会弹出alert框！</h1><script>alert(123);<\/script>";
+            };
+    </script>
+</body>
+</html>
