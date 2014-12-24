@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>b.html</title>
+</head>
+<body>
+
+<script>
+    window.name = "b.html";
+    var new_F = document.createElement("iframe");
+    new_F.src = "about:blank";
+    document.body.appendChild(new_F);
+    console.log(new_F.contentWindow.parent.parent.name);
+</script>
+</body>
+</html>
