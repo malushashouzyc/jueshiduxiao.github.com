@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>a.html</title>
+</head>
+<body>
+    <h1>点击按钮后请看浏览器前进后退是否发生变化</h1>
+    <iframe src="http://http://www.yemianzai.com//frontend/case/iframe/urlModify/b.html" id="frame"></iframe>
+    <button id="hash">changeHash</button>
+    <button id="param">changeParam</button>
+    <script>
+        var $ = function(id) {return document.getElementById(id)};
+        var frame = $("frame"),hash = $("hash"),param = $("param");
+        hash.onclick = function () {
+            frame.contentWindow.location.hash = +(new Date());
+        };
+        param.onclick = function () {
+            frame.contentWindow.location.search = '?'+(+new Date());
+        };
+    </script>
+</body>
+</html>
