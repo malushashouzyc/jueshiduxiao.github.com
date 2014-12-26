@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>跨域传输数据</title>
+    <script src="messager.js"></script>
+</head>
+<body>
+<iframe src="http://backtonaturedemo.github.io/frontend/case/iframe/messager/b.html"></iframe>
+<script>
+    var messager = new ChangyanMsg("changyan");
+    messager.listen(function(msg){
+        console.log(msg);
+    });
+</script>
+</body>
+</html>
