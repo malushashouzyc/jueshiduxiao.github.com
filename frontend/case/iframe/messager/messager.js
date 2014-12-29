@@ -106,12 +106,18 @@ window.Messager = (function() {
             // 兼容IE 6/7
             var targetFunc = window.navigator[prefix + this.name];
             alert(window.navigator[prefix + this.name]);
+            alert(typeof targetFunc);
             if (typeof targetFunc == 'function') {
+                alert(11);
                 targetFunc(prefix + msg, window);
             }
         }
     };
     Messager.prototype.listen = function(callback) {
+        alert(this.listenFunc.length);
         this.listenFunc.push(callback);
+        alert(this.listenFunc.length);
+        alert("xxx");
+
     };
     return Messager; })();
