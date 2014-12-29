@@ -24,6 +24,7 @@
             }
             window.navigator.xxx = final;
             alert(window.navigator.xxx.length/1024);
+            // ie7/8下必须设为null才能将之从内存释放
             window.navigator.xxx = null;
         });
     });
