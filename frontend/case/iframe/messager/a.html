@@ -12,7 +12,7 @@
         var frame = document.getElementById("frame");
         var messager = new Messager("changyan", frame.contentWindow, 'parent');
         messager.listen(function(msg){
-            alert('I am a'+ msg);
+            alert('script running on a.html'+ msg);
         });
         var data2 = 'data from a';
         document.getElementById('button').onclick = function () {
