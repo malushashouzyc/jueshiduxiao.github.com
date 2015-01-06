@@ -6,12 +6,21 @@
     <script src="messager.js"></script>
 </head>
 <body>
-<iframe src="http://backtonaturedemo.github.io/frontend/case/iframe/messager/b.html"></iframe>
-<script>
-    var messager = new Messager("changyan");
-    messager.listen(function(msg){
-        alert(msg.code);
-    });
-</script>
+    <button id="button">post</button>
+    <iframe id="frame" src="http://backtonaturedemo.github.io/frontend/case/iframe/messager/b.html"></iframe>
+   <script>
+        var frame = document.getElementById("frame");
+        var messager = new Messager("changyan", frame.contentWindow, 'parent');
+        messager.listen(function(msg){
+            alert('script running on a.html'+ msg);
+        });
+        var data2 = 'data from a';
+        document.getElementById('button').onclick = function () {
+            messager.post(data2, 'frame');
+				for( var x in parent.navigator.listenFunc) {
+			//alert(x);
+		}
+        };
+    </script>
 </body>
 </html>
