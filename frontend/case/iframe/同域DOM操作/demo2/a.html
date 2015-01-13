@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>a.html</title>
+</head>
+<body>
+
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.0/jquery.js"></script>
+<script type="text/javascript">
+    var $ifarme = $('<iframe src="./b.html"></iframe>').appendTo($('body'));
+    var childWindow = $('iframe').get(0).contentWindow;
+    childWindow.onload = function () {
+        var $win = $(childWindow);
+        var $doc = $(childWindow.document);
+        console.log($win.height());
+        $doc.find('body').css('background-color', 'red');
+        $doc.find('input').bind('click', function () {
+            console.log('click.');
+        });
+    };
+</script>
+</body>
+</html>
