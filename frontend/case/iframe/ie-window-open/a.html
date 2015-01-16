@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>a.html</title>
+</head>
+<body>
+
+<input type="button" id="btn" value="open" />
+<input type="button" id="btn1" value="check" />
+
+<script type="text/javascript">
+    var console = window.console || {
+        log: function (o) {
+            alert(o);
+        }
+    };
+    document.getElementById('btn').onclick = function () {
+        var p = window.open('http://www.baidu.com');
+        window.p = p;
+    };
+    
+    document.getElementById('btn1').onclick = function () {
+        window.check();
+    };
+    
+    window.check = function () {
+        console.log('window.p:' + window.p);
+        var rt = '';
+        try {
+            for (var key in window.p) {
+                rt += key + '\n';
+            }
+        } catch (e) {}
+        console.log('rt:'+ rt);
+        console.log('window.p.closed:' + window.p.closed);
+    };
+</script>
+</body>
+</html>
