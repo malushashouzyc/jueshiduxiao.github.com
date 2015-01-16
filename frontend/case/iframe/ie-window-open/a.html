@@ -18,6 +18,19 @@
     document.getElementById('btn').onclick = function () {
         var p = window.open('http://www.baidu.com');
         window.p = p;
+            var timer = window.setInterval(function () {
+        try {
+                if (window.p.closed === false) {
+                    return;
+                } else {
+                    alert('1');
+                }
+            } catch (ex) {
+                for(var i in ex) {
+                    alert(i + ':' + ex[i]);
+                }
+            }
+    }, 50);
     };
     
     document.getElementById('btn1').onclick = function () {
@@ -35,6 +48,7 @@
         console.log('rt:'+ rt);
         console.log('window.p.closed:' + window.p.closed);
     };
+
 </script>
 </body>
 </html>
