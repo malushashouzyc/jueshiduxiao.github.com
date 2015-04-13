@@ -24,12 +24,14 @@
 
     <!--高速版，加载速度快，使用前需测试页面的兼容性 -->
     <div id="SOHUCS" sid="yemianzai-changyan-0001"></div>
-    <script charset="utf-8" type="text/javascript" src="http://assets.changyan.sohu.com/upload/changyan-plus.js" ></script>
+    <script charset="utf-8" type="text/javascript" src="http://assets.changyan.sohu.com/upload/changyan.js" ></script>
     <script type="text/javascript">
         window.changyan.api.config({
             appid: 'cyrkKYELy',
             conf: 'prod_14a44184e153225aac09c814509d1426',
-            displayFloatBar: false
+            displayFloatBar: false, // 不展示浮条，默认为true
+            simpleCbox: true, // 展示简版评论框，默认为false
+            smallerVersion: true    // 显示缩小版，仅仅展示标题栏及发表框，默认为false
         });
     </script>
 </div>
