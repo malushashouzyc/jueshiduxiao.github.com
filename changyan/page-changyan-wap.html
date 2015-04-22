@@ -7,15 +7,63 @@
     <style type="text/css">
         html, body {
             margin: 0;
+            font-size: 12px;
+        }
+        .wrapper {
+            border-bottom: solid 1px #cccccc;
+            margin: 30px 0;
+        }
+        .wrapper .item {
+            padding: 10px;
+            border-top: solid 1px #cccccc;
+        }
+        .wrapper .item .row1 {
+            display: inline-block;
+            width: 180px;
         }
     </style>
 </head>
 <body>
 
-<div style="height: 1000px;"></div>
+<div id="wrapper" class="wrapper">
+</div>
     
-<div id="SOHUCS"></div>
+<div id="SOHUCS" sid="yemianzai-changyan-0001"></div>
 <script>
+var timer = {
+    sid: function (key) {
+        this['t-' + key] = +new Date();
+    },
+    log: function (name, k1, k2) {
+        var ts = this['t-' + k1] - this['t-' + k2];
+
+        var html = '\
+            <div class="item">\
+                <span class="row1">' + name + '</span>\
+                <span>' + ts + 'ms</span>\
+            </div>\
+        ';
+        
+        var el = document.createElement('div');
+        el.innerHTML = html;
+        document.getElementById('wrapper').appendChild(el);
+    }
+};
+timer.sid('START');
+window.changyanWapDebugFn = function (events) {
+    events.on('CUSTOM_EVT_TOPIC_LOAD', function (data) {
+        timer.sid('TOPIC_LOAD');
+        timer.log('数据载入', 'TOPIC_LOAD', 'START');
+    });
+    events.on('CUSTOM_EVT_CBOX_RENDER', function (data) {
+        timer.sid('CBOX_RENDER');
+        timer.log('评论框渲染', 'CBOX_RENDER', 'START');
+    });
+    events.on('CUSTOM_EVT_COMMENTS_LIST_RENDER', function (data) {
+        timer.sid('COMMENTS_LIST_RENDER');
+        timer.log('评论列表渲染', 'COMMENTS_LIST_RENDER', 'START');
+    });
+};
 (function(){
     var expire_time = parseInt((new Date()).getTime()/(5*60*1000));
     var head = document.head || document.getElementsByTagName("head")[0] || document.documentElement;
@@ -34,6 +82,5 @@
 })();
 </script>
 
-<script src="http://10.2.58.41:8888/target/target-script-min.js#anonymous"></script>
 </body>
 </html>
