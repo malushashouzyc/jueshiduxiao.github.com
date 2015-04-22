@@ -72,7 +72,12 @@
         
         var reqCY = function () {
             window.setTimeout(function () {
-                msg('开始加载畅言...');
+                var $item = $('\
+                    <div class="item">\
+                        <span class="row1">开始加载畅言...</span>\
+                    </div>\
+                ');
+                $wrapper.append($item);
                 $hidden.html('<div id="SOHUCS"></div>');
                 var head = document.head || document.getElementsByTagName("head")[0] || document.documentElement;
                 var script_cyan = document.createElement("script");
@@ -89,7 +94,7 @@
             var iframe = document.createElement("iframe"); 
             iframe.src = url;
             $hidden.append(iframe);
-            $(iframe).attr('width', '320').attr('height', '300');
+            $(iframe).attr('width', '320').attr('height', '100');
 
             iframe.onload = function(){
                 var t2 = +new Date();
