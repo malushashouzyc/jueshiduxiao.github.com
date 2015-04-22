@@ -11,7 +11,6 @@
         }
         .tips {
             padding: 10px;
-            background: #f0f0f0;
         }
         .wrapper {
             display: none;
@@ -26,21 +25,20 @@
             width: 180px;
         }
         .hidden {
-            /* display: none; */
         }
     </style>
 </head>
 <body>
-
-<div class="tips">
-    准备开始测速...
-</div>
 
 <div class="wrapper">
     <div class="item">
         <span class="row1">接入IP</span>
         <span id="ip_data"></span>
     </div>
+</div>
+
+<div class="tips">
+    准备开始测速...
 </div>
 
 <div class="hidden">
@@ -68,24 +66,6 @@
         
         var msg = function (s) {
             $('.tips').html(s);
-        };
-        
-        var reqCY = function () {
-            window.setTimeout(function () {
-                var $item = $('\
-                    <div class="item">\
-                        <span class="row1">开始加载畅言...</span>\
-                    </div>\
-                ');
-                $wrapper.append($item);
-                $hidden.html('<div id="SOHUCS"></div>');
-                var head = document.head || document.getElementsByTagName("head")[0] || document.documentElement;
-                var script_cyan = document.createElement("script");
-                script_cyan.id = 'changyan_mobile_js';
-                script_cyan.src = 'http://changyan.itc.cn/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrkKYELy&'
-                    + 'conf=prod_14a44184e153225aac09c814509d1426&version=' + (+new Date());
-                head.appendChild(script_cyan);
-            }, 2000);
         };
         
         var loadHtml = function (url, fn) {
@@ -146,7 +126,7 @@
 
         var req = function () {
             var item = list.shift();
-            msg('"' + item.name + '" 的访问速度...');
+            msg(item.name + ' -> 访问速度...');
             loadHtml(item.url, function (time) {
                 var $item = $('\
                     <div class="item">\
@@ -159,7 +139,7 @@
                 if (list.length > 0) {
                     window.setTimeout(req, 2000);
                 } else {
-                    reqCY();
+                    msg('测试结束.');
                 }
             });
         };
