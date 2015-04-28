@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>slide</title>
+    <link rel="stylesheet" type="text/css" charset="utf-8" href="http://127.0.0.1/own/jueshiduxiao.github.com/libs/reset.v3.1.1.css" />
+    <style type="text/css">
+        hr{clear: both;}
+
+        .wrapper a{
+            display:block;width:300px;height:200px;
+            font-size:24px;color:#000;text-align:center;
+            line-height:200px;text-decoration:none;
+            background-color:green;
+        }
+
+        .wrapper0{width:300px;height:200px;}
+
+        .wrapper1{width:900px;height:200px;}
+
+        .wrapper3{width:300px;height:600px;}
+
+        .btns a{
+            float:left;width:30px;height:30px;margin:2px;
+            font-size:18px;color:#000;text-align:center;
+            line-height:30px;text-decoration:none;
+            background-color:#CCC;
+        }
+        .btns a.current{background-color:yellow;}
+
+        .c1 { background-color: red !important; }
+        .c2 { background-color: yellow !important; }
+        .c3 { background-color: black !important; }
+        .c4 { background-color: grey !important; }
+    </style>
+</head>
+<body>
+<!--buttons-->
+<div class="btns btns-0">
+    <a href="javascript:void(0);">1</a>
+    <a href="javascript:void(0);">2</a>
+    <a href="javascript:void(0);">3</a>
+    <a href="javascript:void(0);">4</a>
+    <a href="javascript:void(0);">5</a>
+</div>
+<hr />
+<div class="btns btns-1">
+    <a href="javascript:void(0);" data-type="prev"><-</a>
+    <a href="javascript:void(0);" data-type="next">-></a>
+</div>
+<hr />
+<!--sliders-->
+<div style="width:70%;float:left;">
+    <div class="wrapper-0 wrapper wrapper0">
+        <a href="">1</a>
+        <a class="c1" href="" style="display:none;">2</a>
+        <a class="c2" href="" style="display:none;">3</a>
+        <a class="c3" href="" style="display:none;">4</a>
+        <a class="c4" href="" style="display:none;">5</a>
+    </div>
+    <hr />
+    <div class="wrapper-1 wrapper wrapper1">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="" style="display:none;">4</a>
+        <a href="" style="display:none;">5</a>
+        <a href="" style="display:none;">6</a>
+        <a href="" style="display:none;">7</a>
+        <a href="" style="display:none;">8</a>
+        <a href="" style="display:none;">9</a>
+        <a href="" style="display:none;">10</a>
+        <a href="" style="display:none;">11</a>
+        <a href="" style="display:none;">12</a>
+        <a href="" style="display:none;">13</a>
+        <a href="" style="display:none;">14</a>
+        <a href="" style="display:none;">15</a>
+    </div>
+    <hr />
+    <div class="wrapper-2 wrapper wrapper0">
+        <a href="">1</a>
+        <a href="" style="display:none;">2</a>
+        <a href="" style="display:none;">3</a>
+        <a href="" style="display:none;">4</a>
+        <a href="" style="display:none;">5</a>
+    </div>
+</div>
+<div style="width:30%;float:left;">
+    <div class="wrapper-3 wrapper  wrapper3">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="" style="display:none;">4</a>
+        <a href="" style="display:none;">5</a>
+        <a href="" style="display:none;">6</a>
+        <a href="" style="display:none;">7</a>
+        <a href="" style="display:none;">8</a>
+        <a href="" style="display:none;">9</a>
+        <a href="" style="display:none;">10</a>
+        <a href="" style="display:none;">11</a>
+        <a href="" style="display:none;">12</a>
+        <a href="" style="display:none;">13</a>
+        <a href="" style="display:none;">14</a>
+        <a href="" style="display:none;">15</a>
+    </div>
+</div>
+<hr />
+<script type="text/javascript" charset="utf-8" src="http://127.0.0.1/own/jueshiduxiao.github.com/libs/es5.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://127.0.0.1/own/jueshiduxiao.github.com/libs/jquery/jquery.v1.9.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://127.0.0.1/own/jueshiduxiao.github.com/libs/seajs/seajs.v1.0.1.js"></script>
+<script type="text/javascript">
+seajs.config({
+    charset: 'utf-8',
+    timeout: 20000,
+    debug: 2
+});
+seajs.use([
+    './init'
+]);
+</script>
+</body>
+</html>
