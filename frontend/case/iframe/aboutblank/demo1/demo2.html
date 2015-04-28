@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>demo2</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var frame = document.createElement('iframe');
+        frame.src = 'about:blank';
+        document.body.appendChild(frame);
+
+        console.log(frame.contentWindow);
+        console.log(frame.contentWindow.document);
+
+        frame.contentWindow.document.write('<div id="mydiv">hello world.</div>');
+        frame.contentWindow.document.close();
+
+        frame.contentWindow.document.getElementById('mydiv').style.color = 'red';
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>demo1</title>
+</head>
+<body>
+    <iframe id="frame" src="about:blank"></iframe>
+    <script type="text/javascript">
+        var frame = document.getElementById('frame');
+        console.log(frame.contentWindow);
+        console.log(frame.contentWindow.document);
+
+        frame.contentWindow.document.write('<div id="mydiv">hello world.</div>');
+        frame.contentWindow.document.close();
+
+        frame.contentWindow.document.getElementById('mydiv').style.color = 'red';
+    </script>
+</body>
+</html>
