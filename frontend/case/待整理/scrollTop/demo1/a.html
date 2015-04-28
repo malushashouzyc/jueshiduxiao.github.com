@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>a.html</title>
+</head>
+<body>
+
+<div style="height: 1000px; width: 600px;"></div>
+<input type="button" value="button" />
+
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.0/jquery.js"></script>
+<script type="text/javascript">
+    $('<iframe src="./b.html"></iframe>').appendTo($('body'));
+    $('input').click(function () {
+        console.log($(window).scrollTop());
+    });
+</script>
+</body>
+</html>
