@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+    var iframe = document.createElement("iframe");
+    iframe.src = "iframe.html";
+    iframe.name = "myIframe";
+    if (iframe.attachEvent){
+        iframe.attachEvent("onload", function() {
+            alert("iframe加载完毕");
+        });
+    } else {
+        iframe.onload = function() {
+            alert("iframe加载完毕");
+        };
+    }
+    document.body.appendChild(iframe);
+</script>
+</html>

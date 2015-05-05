@@ -1,0 +1,4 @@
+1.IE6支持iframe的onload事件，不过是隐形的，需要通过attachEvent来注册。 IE7+不需attachEvent
+2.iframe在没有src属性的时候，chrome下的onload事件失效，IE下无影响；动态添加iframe不添加src属性当iframe添加到页面上时也
+能触发onload
+3.src链接错误时仍会触发onload事件
