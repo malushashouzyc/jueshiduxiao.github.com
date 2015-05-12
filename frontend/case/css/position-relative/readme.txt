@@ -1,0 +1,2 @@
+IE7下，如果子元素position：relative，父层元素overflow：hidden对子元素不起作用，父层元素加上position:relative
+后可解决此问题
