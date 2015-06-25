@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript" src="http://cdn.bootcss.com/json2/20140204/json2.js"></script>
+<script type="text/javascript" src="querystring.js"></script>
+<script type="text/javascript">
+    console.log(queryString);
+    var testStr = 'adasfasdf=b=c=d&b=2&c=3';
+    var result = queryString.formatToJson(testStr);
+    console.log(result);
+    console.log(queryString.formatToString(result));
+</script>
+</html>
